@@ -31,7 +31,7 @@ export default function Category() {
   }, [])
 
   function getAllCategories() {
-    fetch(`http://localhost:4000/v1/category`)
+    fetch(`https://back-end-sabzlearn.vercel.app/category`)
       .then((res) => res.json())
       .then((allCategories) => {
         setCategories(allCategories)
@@ -46,7 +46,7 @@ export default function Category() {
       name: formState.inputs.shortname.value,
     }
 
-    fetch("http://localhost:4000/v1/category", {
+    fetch("https://back-end-sabzlearn.vercel.app/category", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -73,7 +73,7 @@ export default function Category() {
       buttons: ["لغو", "حذف"],
     }).then((res) => {
       if (res) {
-        fetch(`http://localhost:4000/v1/category/${id}`, {
+        fetch(`https://back-end-sabzlearn.vercel.app/category/${id}`, {
           method: "DELETE",
           headers: {
             Authorization: `Bearer ${localStorageData.token}`,
@@ -109,7 +109,7 @@ export default function Category() {
         const newShortName = document.getElementById("newShortName").value
         // انجام عملیات مربوط به ورودی‌ها
         if (newTitle.trim().length && newShortName.trim().length) {
-          fetch(`http://localhost:4000/v1/category/${id}`, {
+          fetch(`https://back-end-sabzlearn.vercel.app/category/${id}`, {
             method: "PUT",
             headers: {
               "Content-Type": "application/json",

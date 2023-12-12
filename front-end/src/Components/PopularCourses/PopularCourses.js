@@ -10,7 +10,7 @@ import "./PopularCourses.css"
 export default function PopularCourses() {
   const [popularCourses, setPopularCourses] = useState([])
   useEffect(() => {
-    fetch("http://localhost:4000/v1/courses/popular")
+    fetch("https://back-end-sabzlearn.vercel.app/courses/popular")
       .then((res) => res.json())
       .then((result) => {
         setPopularCourses(result)

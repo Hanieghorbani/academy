@@ -6,7 +6,7 @@ export default function Discounts() {
 
   function setDiscounts(e) {
     e.preventDefault()
-    fetch(`http://localhost:4000/v1/offs/all`, {
+    fetch(`https://back-end-sabzlearn.vercel.app/offs/all`, {
       method: "POST",
       headers: {
         Authorization: `Bearer ${

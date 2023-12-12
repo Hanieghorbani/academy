@@ -18,7 +18,7 @@ export default function Session() {
   const [courseInfos, setCourseInfos] = useState([])
   const localStorageToken = JSON.parse(localStorage.getItem("user"))
   useEffect(() => {
-    fetch(`http://localhost:4000/v1/courses/${courseName}/${sessionID}`, {
+    fetch(`https://back-end-sabzlearn.vercel.app/courses/${courseName}/${sessionID}`, {
       headers: {
         Authorization: `Bearer ${
           localStorageToken ? localStorageToken.token : "null"
@@ -31,7 +31,7 @@ export default function Session() {
         setSessions(data.sessions)
       })
 
-    fetch(`http://localhost:4000/v1/courses/${courseName}`, {
+    fetch(`https://back-end-sabzlearn.vercel.app/courses/${courseName}`, {
       headers: {
         Authorization: `Bearer ${
           localStorageToken ? localStorageToken.token : "null"

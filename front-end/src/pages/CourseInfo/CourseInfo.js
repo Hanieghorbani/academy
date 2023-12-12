@@ -57,7 +57,7 @@ export default function CourseInfo() {
   }, [courseName])
 
   function getAllInfosCourse() {
-    fetch(`http://localhost:4000/v1/courses/${courseName}`, {
+    fetch(`https://back-end-sabzlearn.vercel.app/courses/${courseName}`, {
       headers: {
         Authorization: `Bearer ${
           localStorageToken ? localStorageToken.token : "null"
@@ -82,7 +82,7 @@ export default function CourseInfo() {
         setCreatedAt(result.categoryID.createdAt)
         setCreator(result.creator)
 
-        fetch(`http://localhost:4000/v1/courses/related/${courseName}`)
+        fetch(`https://back-end-sabzlearn.vercel.app/courses/related/${courseName}`)
           .then((res) => res.json())
           .then((datas) => {
             setRelatedCourses(datas)
@@ -104,7 +104,7 @@ export default function CourseInfo() {
   const submitComment = (score, contentComment, clearCommentTextArea) => {
     const localStorageToken = JSON.parse(localStorage.getItem("user"))
     if (score != "-1") {
-      fetch(`http://localhost:4000/v1/comments`, {
+      fetch(`https://back-end-sabzlearn.vercel.app/comments`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -138,7 +138,7 @@ export default function CourseInfo() {
         buttons: ["لغو", "ثبت نام"],
       }).then((res) => {
         if (res) {
-          fetch(`http://localhost:4000/v1/courses/${course._id}/register`, {
+          fetch(`https://back-end-sabzlearn.vercel.app/courses/${course._id}/register`, {
             method: "POST",
             headers: {
               Authorization: `Bearer ${localStorageToken.token}`,
@@ -176,7 +176,7 @@ export default function CourseInfo() {
             buttons: ["ثبت نام بدون کد تخفیف", "اعمال کد تخفیف"],
           }).then((code) => {
             if (!code) {
-              fetch(`http://localhost:4000/v1/courses/${course._id}/register`, {
+              fetch(`https://back-end-sabzlearn.vercel.app/courses/${course._id}/register`, {
                 method: "POST",
                 headers: {
                   Authorization: `Bearer ${localStorageToken.token}`,
@@ -206,7 +206,7 @@ export default function CourseInfo() {
                 }
               })
             } else {
-              fetch(`http://localhost:4000/v1/offs/${code}`, {
+              fetch(`https://back-end-sabzlearn.vercel.app/offs/${code}`, {
                 method: "POST",
                 headers: {
                   Authorization: `Bearer ${localStorageToken.token}`,
@@ -244,7 +244,7 @@ export default function CourseInfo() {
                   }).then((res) => {
                     if (res) {
                       fetch(
-                        `http://localhost:4000/v1/courses/${course._id}/register`,
+                        `https://back-end-sabzlearn.vercel.app/courses/${course._id}/register`,
                         {
                           method: "POST",
                           headers: {

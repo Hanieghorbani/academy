@@ -42,7 +42,7 @@ export default function Contact() {
 
   const addNewContact = (e) => {
     e.preventDefault()
-    fetch("http://localhost:4000/v1/contact", {
+    fetch("https://back-end-sabzlearn.vercel.app/contact", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

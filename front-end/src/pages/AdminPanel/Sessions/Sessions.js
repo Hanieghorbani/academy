@@ -29,7 +29,7 @@ export default function Sessions() {
   useEffect(() => {
     getAllSessions()
 
-    fetch("http://localhost:4000/v1/courses")
+    fetch("https://back-end-sabzlearn.vercel.app/courses")
       .then((res) => res.json())
       .then((allCourses) => {
         setCourses(allCourses)
@@ -37,7 +37,7 @@ export default function Sessions() {
   }, [])
 
   function getAllSessions() {
-    fetch("http://localhost:4000/v1/courses/sessions")
+    fetch("https://back-end-sabzlearn.vercel.app/courses/sessions")
       .then((res) => res.json())
       .then((allSessions) => setSessions(allSessions))
   }
@@ -50,7 +50,7 @@ export default function Sessions() {
       formData.append("time", formState.inputs.time.value)
       formData.append("video", sessionVideo)
       formData.append("free", isFree)
-      fetch(`http://localhost:4000/v1/courses/${sessionCourse}/sessions`, {
+      fetch(`https://back-end-sabzlearn.vercel.app/courses/${sessionCourse}/sessions`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${localStorageToken.token}`,
@@ -83,7 +83,7 @@ export default function Sessions() {
       buttons: ["لغو", "حذف"],
     }).then((res) => {
       if (res) {
-        fetch(`http://localhost:4000/v1/courses/sessions/${id}`, {
+        fetch(`https://back-end-sabzlearn.vercel.app/courses/sessions/${id}`, {
           method: "DELETE",
           headers: {
             Authorization: `Bearer ${localStorageToken.token}`,

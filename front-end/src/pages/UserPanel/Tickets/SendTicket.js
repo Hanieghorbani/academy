@@ -17,11 +17,11 @@ export default function SendTicket() {
   
   const navigate = useNavigate()
   useEffect(() => {
-    fetch(`http://localhost:4000/v1/tickets/departments`)
+    fetch(`https://back-end-sabzlearn.vercel.app/tickets/departments`)
       .then((res) => res.json())
       .then((data) => setDepartments(data))
 
-    fetch(`http://localhost:4000/v1/users/courses/`, {
+    fetch(`https://back-end-sabzlearn.vercel.app/users/courses/`, {
       headers: {
         Authorization: `Bearer ${
           JSON.parse(localStorage.getItem("user")).token
@@ -36,7 +36,7 @@ export default function SendTicket() {
 
   function getDepartmentsSub(departmentID) {
     if (departmentID != "-1") {
-      fetch(`http://localhost:4000/v1/tickets/departments-subs/${departmentID}`)
+      fetch(`https://back-end-sabzlearn.vercel.app/tickets/departments-subs/${departmentID}`)
         .then((res) => res.json())
         .then((subs) => setDepartmentsSubs(subs))
     } else {
@@ -55,7 +55,7 @@ export default function SendTicket() {
       course: courseId ? courseId : undefined,
     }
 
-    fetch(`http://localhost:4000/v1/tickets`, {
+    fetch(`https://back-end-sabzlearn.vercel.app/tickets`, {
       method: "POST",
       headers: {
         Authorization: `Bearer ${

@@ -7,7 +7,7 @@ import "./LastCourses.css"
 export default function LastCourses() {
   const [courses, setCourses] = useState(null)
   useEffect(() => {
-    fetch("http://localhost:4000/v1/courses")
+    fetch("https://back-end-sabzlearn.vercel.app/courses")
       .then((res) => {
         if (res.ok) {
           return res.json()

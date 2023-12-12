@@ -33,7 +33,7 @@ export default function Articles() {
 
   useEffect(() => {
     getAllArticles()
-    fetch(`http://localhost:4000/v1/category`)
+    fetch(`https://back-end-sabzlearn.vercel.app/category`)
       .then((res) => res.json())
       .then((allCategories) => {
         setCategories(allCategories)
@@ -41,7 +41,7 @@ export default function Articles() {
   }, [])
 
   function getAllArticles() {
-    fetch("http://localhost:4000/v1/articles")
+    fetch("https://back-end-sabzlearn.vercel.app/articles")
       .then((res) => res.json())
       .then((allArticles) => {
         setArticles(allArticles)
@@ -55,7 +55,7 @@ export default function Articles() {
       buttons: ["لغو", "حذف"],
     }).then((res) => {
       if (res) {
-        fetch(`http://localhost:4000/v1/articles/${id}`, {
+        fetch(`https://back-end-sabzlearn.vercel.app/articles/${id}`, {
           method: "DELETE",
           headers: {
             Authorization: `Bearer ${localStorageData.token}`,
@@ -95,7 +95,7 @@ export default function Articles() {
     formData.append("categoryID", articleCategory)
     formData.append("cover", articleCover)
 
-    fetch("http://localhost:4000/v1/articles", {
+    fetch("https://back-end-sabzlearn.vercel.app/articles", {
       method: "POST",
       headers: {
         Authorization: `Bearer ${localStorageData.token}`,
@@ -137,7 +137,7 @@ export default function Articles() {
     formData.append("categoryID", articleCategory)
     formData.append("cover", articleCover)
 
-    fetch("http://localhost:4000/v1/articles/draft", {
+    fetch("https://back-end-sabzlearn.vercel.app/articles/draft", {
       method: "POST",
       headers: {
         Authorization: `Bearer ${localStorageData.token}`,

@@ -51,7 +51,7 @@ export default function Users() {
   }, [])
 
   function getAllUsers() {
-    fetch("http://localhost:4000/v1/users", {
+    fetch("https://back-end-sabzlearn.vercel.app/users", {
       headers: {
         Authorization: `Bearer ${localStorageToken.token}`,
       },
@@ -69,7 +69,7 @@ export default function Users() {
       buttons: ["لغو", "حذف"],
     }).then((res) => {
       if (res) {
-        fetch(`http://localhost:4000/v1/users/${id}`, {
+        fetch(`https://back-end-sabzlearn.vercel.app/users/${id}`, {
           method: "DELETE",
           headers: {
             Authorization: `Bearer ${localStorageToken.token}`,
@@ -97,7 +97,7 @@ export default function Users() {
       buttons: ["لغو", "بن"],
     }).then((res) => {
       if (res) {
-        fetch(`http://localhost:4000/v1/users/ban/${id}`, {
+        fetch(`https://back-end-sabzlearn.vercel.app/users/ban/${id}`, {
           method: "PUT",
           headers: {
             Authorization: `Bearer ${localStorageToken.token}`,
@@ -133,7 +133,7 @@ export default function Users() {
         confirmPassword: formState.inputs.password.value,
       }
 
-      fetch("http://localhost:4000/v1/auth/register", {
+      fetch("https://back-end-sabzlearn.vercel.app/auth/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -197,7 +197,7 @@ export default function Users() {
       buttons: "ارسال",
     }).then((role) => {
       if (role.trim()) {
-        fetch(`http://localhost:4000/v1/users/role`, {
+        fetch(`https://back-end-sabzlearn.vercel.app/users/role`, {
           method: "PUT",
           headers: {
             Authorization: `Bearer ${localStorageToken.token}`,

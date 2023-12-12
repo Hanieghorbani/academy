@@ -7,7 +7,7 @@ export default function Courses() {
   const [showCourseState, setShowCourseState] = useState("all")
   const [shownCourses, setShownCourses] = useState([])
   useEffect(() => {
-    fetch(`http://localhost:4000/v1/users/courses/`, {
+    fetch(`https://back-end-sabzlearn.vercel.app/users/courses/`, {
       headers: {
         Authorization: `Bearer ${
           JSON.parse(localStorage.getItem("user")).token

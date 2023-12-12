@@ -29,7 +29,7 @@ export default function Category() {
   const [searchValue, setSearchValue] = useState("")
   const [showCourses, setShowCourses] = useState("grid")
   useEffect(() => {
-    fetch(`http://localhost:4000/v1/courses/category/${categoryName}`)
+    fetch(`https://back-end-sabzlearn.vercel.app/courses/category/${categoryName}`)
       .then((res) => res.json())
       .then((result) => {
         setCourses(result)

@@ -52,7 +52,7 @@ export default function EditAccount() {
       password: formState.inputs.password.value,
       phone: formState.inputs.phone.value,
     }
-    fetch(`http://localhost:4000/v1/users/`, {
+    fetch(`https://back-end-sabzlearn.vercel.app/users/`, {
       method: "PUT",
       headers: {
         Authorization: `Bearer ${localStorageToken.token}`,

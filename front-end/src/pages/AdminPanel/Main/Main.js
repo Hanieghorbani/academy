@@ -8,7 +8,7 @@ export default function Main() {
   const [MainInfos, setMainInfos] = useState([])
   const [isLoading, setIsLoading] = useState(false)
   useEffect(() => {
-    fetch("http://localhost:4000/v1/infos/p-admin", {
+    fetch("https://back-end-sabzlearn.vercel.app/infos/p-admin", {
       headers: {
         Authorization: `Bearer ${localStorageToken.token}`,
       },

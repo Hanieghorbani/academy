@@ -34,13 +34,13 @@ export default function Draft() {
   )
 
   useEffect(() => {
-    fetch(`http://localhost:4000/v1/category`)
+    fetch(`https://back-end-sabzlearn.vercel.app/category`)
       .then((res) => res.json())
       .then((allCategories) => {
         setCategories(allCategories)
       })
 
-    fetch(`http://localhost:4000/v1/articles/${articleName}`, {
+    fetch(`https://back-end-sabzlearn.vercel.app/articles/${articleName}`, {
       headers: {
         Authorization: `Bearer ${localStorageData.token}`,
       },
@@ -65,7 +65,7 @@ export default function Draft() {
       formData.append("categoryID", articleCategory)
       formData.append("cover", articleCover)
 
-      fetch("http://localhost:4000/v1/articles", {
+      fetch("https://back-end-sabzlearn.vercel.app/articles", {
         method: "POST",
         headers: {
           Authorization: `Bearer ${localStorageData.token}`,
@@ -110,7 +110,7 @@ export default function Draft() {
     formData.append("categoryID", articleCategory)
     formData.append("cover", articleCover)
 
-    fetch("http://localhost:4000/v1/articles/draft", {
+    fetch("https://back-end-sabzlearn.vercel.app/articles/draft", {
       method: "POST",
       headers: {
         Authorization: `Bearer ${localStorageData.token}`,

@@ -9,7 +9,7 @@ export default memo(function Topbar() {
 
   const [allTopbarLinks, setAllTopbarLinks] = useState([])
   useEffect(() => {
-    fetch(`http://localhost:4000/v1/menus/topbar`)
+    fetch(`https://back-end-sabzlearn.vercel.app/menus/topbar`)
       .then((res) => res.json())
       .then((datas) => {
         setAllTopbarLinks(datas)

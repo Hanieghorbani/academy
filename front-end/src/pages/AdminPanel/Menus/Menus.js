@@ -30,7 +30,7 @@ export default function Menus() {
   }, [])
 
   function getAllMenus() {
-    fetch("http://localhost:4000/v1/menus/all")
+    fetch("https://back-end-sabzlearn.vercel.app/menus/all")
       .then((res) => res.json())
       .then((allMenus) => {
         setMenus(allMenus)
@@ -44,7 +44,7 @@ export default function Menus() {
       buttons: ["لغو", "حذف"],
     }).then((res) => {
       if (res) {
-        fetch(`http://localhost:4000/v1/menus/${id}`, {
+        fetch(`https://back-end-sabzlearn.vercel.app/menus/${id}`, {
           method: "DELETE",
           headers: {
             Authorization: `Bearer ${localStorageToken.token}`,
@@ -74,7 +74,7 @@ export default function Menus() {
       parent: menuParent != "-1" ? menuParent : undefined,
     }
 
-    fetch("http://localhost:4000/v1/menus", {
+    fetch("https://back-end-sabzlearn.vercel.app/menus", {
       method: "POST",
       headers: {
         Authorization: `Bearer ${localStorageToken.token}`,

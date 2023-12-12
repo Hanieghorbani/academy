@@ -11,7 +11,7 @@ export default function Courses() {
   const [shownCourses, setShownCourses] = useState([])
 
   useEffect(() => {
-    fetch("http://localhost:4000/v1/courses")
+    fetch("https://back-end-sabzlearn.vercel.app/courses")
       .then((res) => res.json())
       .then((data) => {
         setCourses(data)

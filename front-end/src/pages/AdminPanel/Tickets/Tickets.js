@@ -7,7 +7,7 @@ export default function Tickets() {
   const localStorageToken = JSON.parse(localStorage.getItem("user"))
 
   useEffect(() => {
-    fetch(`http://localhost:4000/v1/tickets`, {
+    fetch(`https://back-end-sabzlearn.vercel.app/tickets`, {
       headers: {
         Authorization: `Bearer ${
           JSON.parse(localStorage.getItem("user")).token
@@ -34,7 +34,7 @@ export default function Tickets() {
       buttons: "ارسال",
     }).then((value) => {
       if (value.trim()) {
-        fetch(`http://localhost:4000/v1/tickets/answer`, {
+        fetch(`https://back-end-sabzlearn.vercel.app/tickets/answer`, {
           method: "POST",
           headers: {
             Authorization: `Bearer ${localStorageToken.token}`,

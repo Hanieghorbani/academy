@@ -11,7 +11,7 @@ export default function Comments() {
   }, [])
 
   function getAllComments() {
-    fetch("http://localhost:4000/v1/comments")
+    fetch("https://back-end-sabzlearn.vercel.app/comments")
       .then((res) => res.json())
       .then((allComments) => setComments(allComments))
   }
@@ -23,7 +23,7 @@ export default function Comments() {
       buttons: ["لغو", "حذف"],
     }).then((res) => {
       if (res) {
-        fetch(`http://localhost:4000/v1/comments/${id}`, {
+        fetch(`https://back-end-sabzlearn.vercel.app/comments/${id}`, {
           method: "DELETE",
           headers: {
             Authorization: `Bearer ${localStorageToken.token}`,
@@ -58,7 +58,7 @@ export default function Comments() {
       buttons: ["لغو", "بن"],
     }).then((res) => {
       if (res) {
-        fetch(`http://localhost:4000/v1/users/ban/${id}`, {
+        fetch(`https://back-end-sabzlearn.vercel.app/users/ban/${id}`, {
           method: "PUT",
           headers: {
             Authorization: `Bearer ${localStorageToken.token}`,
@@ -86,7 +86,7 @@ export default function Comments() {
       buttons: "ارسال",
     }).then((value) => {
       if (value.trim()) {
-        fetch(`http://localhost:4000/v1/comments/answer/${id}`, {
+        fetch(`https://back-end-sabzlearn.vercel.app/comments/answer/${id}`, {
           method: "POST",
           headers: {
             Authorization: `Bearer ${localStorageToken.token}`,
@@ -122,7 +122,7 @@ export default function Comments() {
       buttons: ["لغو", "تایید"],
     }).then((res) => {
       if (res) {
-        fetch(`http://localhost:4000/v1/comments/accept/${id}`, {
+        fetch(`https://back-end-sabzlearn.vercel.app/comments/accept/${id}`, {
           method: "PUT",
           headers: {
             Authorization: `Bearer ${localStorageToken.token}`,
@@ -154,7 +154,7 @@ export default function Comments() {
       buttons: ["لغو", "رد"],
     }).then((res) => {
       if (res) {
-        fetch(`http://localhost:4000/v1/comments/reject/${id}`, {
+        fetch(`https://back-end-sabzlearn.vercel.app/comments/reject/${id}`, {
           method: "PUT",
           headers: {
             Authorization: `Bearer ${localStorageToken.token}`,

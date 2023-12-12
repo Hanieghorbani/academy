@@ -11,7 +11,7 @@ export default function Contact() {
   }, [])
 
   function getAllContacts() {
-    fetch("http://localhost:4000/v1/contact")
+    fetch("https://back-end-sabzlearn.vercel.app/contact")
       .then((res) => res.json())
       .then((allContacts) => {
         setContacts(allContacts)
@@ -31,7 +31,7 @@ export default function Contact() {
       buttons: "ارسال",
     }).then((value) => {
       if (value.trim()) {
-        fetch("http://localhost:4000/v1/contact/answer", {
+        fetch("https://back-end-sabzlearn.vercel.app/contact/answer", {
           method: "POST",
           headers: {
             Authorization: `Bearer ${localStorageData.token}`,
@@ -69,7 +69,7 @@ export default function Contact() {
       buttons: ["لغو", "حذف"],
     }).then((res) => {
       if (res) {
-        fetch(`http://localhost:4000/v1/contact/${id}`, {
+        fetch(`https://back-end-sabzlearn.vercel.app/contact/${id}`, {
           method: "DELETE",
           headers: {
             Authorization: `Bearer ${localStorageData.token}`,

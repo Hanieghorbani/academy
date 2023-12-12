@@ -46,7 +46,7 @@ export default function Courses() {
   useEffect(() => {
     getAllCourses()
 
-    fetch(`http://localhost:4000/v1/category`)
+    fetch(`https://back-end-sabzlearn.vercel.app/category`)
       .then((res) => res.json())
       .then((allCategories) => {
         setCategories(allCategories)
@@ -54,7 +54,7 @@ export default function Courses() {
   }, [])
 
   function getAllCourses() {
-    fetch("http://localhost:4000/v1/courses", {
+    fetch("https://back-end-sabzlearn.vercel.app/courses", {
       headers: {
         Authorization: `Bearer ${localStorageData.token}`,
       },
@@ -72,7 +72,7 @@ export default function Courses() {
       buttons: ["لغو", "حذف"],
     }).then((res) => {
       if (res) {
-        fetch(`http://localhost:4000/v1/courses/${id}`, {
+        fetch(`https://back-end-sabzlearn.vercel.app/courses/${id}`, {
           method: "DELETE",
           headers: {
             Authorization: `Bearer ${localStorageData.token}`,
@@ -113,7 +113,7 @@ export default function Courses() {
     formData.append("cover", courseCover)
 
     if (courseCategory != "-1") {
-      fetch(`http://localhost:4000/v1/courses`, {
+      fetch(`https://back-end-sabzlearn.vercel.app/courses`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${localStorageData.token}`,

@@ -8,7 +8,7 @@ export default function Orders() {
   const localStorageToken = JSON.parse(localStorage.getItem("user"))
 
   useEffect(() => {
-    fetch(`http://localhost:4000/v1/orders`, {
+    fetch(`https://back-end-sabzlearn.vercel.app/orders`, {
       headers: {
         Authorization: `Bearer ${localStorageToken.token}`,
       },

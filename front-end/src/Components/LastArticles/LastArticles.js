@@ -8,7 +8,7 @@ export default function LastArticles() {
   const [articles, setArticles] = useState([])
   useEffect(() => {
     const localStorageToken = JSON.parse(localStorage.getItem("user"))
-    fetch("http://localhost:4000/v1/articles", {
+    fetch("https://back-end-sabzlearn.vercel.app/articles", {
       method: "GET",
       headers: {
         Authorization: `Bearer ${

@@ -47,7 +47,7 @@ export default function ArticleInfo() {
 
   useEffect(() => {
     const localStorageToken = JSON.parse(localStorage.getItem("user"))
-    fetch(`http://localhost:4000/v1/articles/${articleName}`, {
+    fetch(`https://back-end-sabzlearn.vercel.app/articles/${articleName}`, {
       method: "GET",
       headers: {
         Authorization: `Bearer ${
@@ -66,7 +66,7 @@ export default function ArticleInfo() {
         setLoading(false)
       })
 
-    fetch("http://localhost:4000/v1/courses/popular")
+    fetch("https://back-end-sabzlearn.vercel.app/courses/popular")
       .then((res) => res.json())
       .then((result) => {
         setPopularCourses(result)

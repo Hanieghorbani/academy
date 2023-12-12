@@ -7,7 +7,7 @@ export default function ViewOrder() {
 
   const [orderInfos, setOrderInfos] = useState([])
   useEffect(() => {
-    fetch(`http://localhost:4000/v1/orders/${orderID}`, {
+    fetch(`https://back-end-sabzlearn.vercel.app/orders/${orderID}`, {
       headers: {
         Authorization: `Bearer ${localStorageToken.token}`,
       },

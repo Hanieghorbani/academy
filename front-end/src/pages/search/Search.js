@@ -11,7 +11,7 @@ export default function Search() {
   const [allResultArticles, setAllResultArticles] = useState([])
   const [allResultCourses, setAllResultCourses] = useState([])
   useEffect(() => {
-    fetch(`http://localhost:4000/v1/search/${searchValue}`)
+    fetch(`https://back-end-sabzlearn.vercel.app/search/${searchValue}`)
       .then((res) => res.json())
       .then((result) => {
         setAllResultArticles(result.allResultArticles)

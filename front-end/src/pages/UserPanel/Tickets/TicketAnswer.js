@@ -10,7 +10,7 @@ export default function TicketAnswer() {
   const [ticketInfo, setTicketInfo] = useState({})
   const contextData = useContext(AuthContext)
   useEffect(() => {
-    fetch(`http://localhost:4000/v1/tickets/answer/${id}`, {
+    fetch(`https://back-end-sabzlearn.vercel.app/tickets/answer/${id}`, {
       headers: {
         Authorization: `Bearer ${
           JSON.parse(localStorage.getItem("user")).token

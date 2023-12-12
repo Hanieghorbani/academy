@@ -37,7 +37,7 @@ export default function Offs() {
 
   useEffect(() => {
     getAllOffs()
-    fetch("http://localhost:4000/v1/courses")
+    fetch("https://back-end-sabzlearn.vercel.app/courses")
       .then((res) => res.json())
       .then((allCourses) => {
         setCourses(allCourses)
@@ -53,7 +53,7 @@ export default function Offs() {
   }, [])
 
   function getAllOffs() {
-    fetch("http://localhost:4000/v1/offs/", {
+    fetch("https://back-end-sabzlearn.vercel.app/offs/", {
       headers: {
         Authorization: `Bearer ${localStorageToken.token}`,
       },
@@ -75,7 +75,7 @@ export default function Offs() {
         max: formState.inputs.maxLength.value,
       }
 
-      fetch("http://localhost:4000/v1/offs/", {
+      fetch("https://back-end-sabzlearn.vercel.app/offs/", {
         method: "POST",
         headers: {
           Authorization: `Bearer ${localStorageToken.token}`,
@@ -115,7 +115,7 @@ export default function Offs() {
       buttons: ["لغو", "حذف"],
     }).then((res) => {
       if (res) {
-        fetch(`http://localhost:4000/v1/offs/${id}`, {
+        fetch(`https://back-end-sabzlearn.vercel.app/offs/${id}`, {
           method: "DELETE",
           headers: {
             Authorization: `Bearer ${localStorageToken.token}`,

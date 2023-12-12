@@ -11,7 +11,7 @@ import "swiper/css/pagination"
 export default function PresellCourses() {
   const [presellCourses, setPresellCourses] = useState([])
   useEffect(() => {
-    fetch("http://localhost:4000/v1/courses/presell")
+    fetch("https://back-end-sabzlearn.vercel.app/courses/presell")
       .then((res) => res.json())
       .then((result) => {
         setPresellCourses(result)
